@@ -1,0 +1,23 @@
+# Natas Level 7 → Level 8
+<pre><h3><b>Level 7
+Username : natas5
+Password : iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
+URL      : http://natas5.natas.labs.overthewire.org</b></h3></pre>
+### Solution
+
+To solve this level, we first log into the natas7 application using the credentials provided above.
+
+![natas7-1](https://securitytimes.files.wordpress.com/2017/06/7-10-2017-3-56-13-pm.png?w=663)
+
+We can see that the application has a couple of links to the Home page and the about page. The application also provides a hint in a comment which reads ‘**hint: password for webuser natas8 is in /etc/natas_webpass/natas8**‘. Therefore, if we can somehow navigate to this page, we might be able to read the password.
+
+By clicking around on the application, we can see that the application submits the page to load by using a get parameter ‘**page**‘. When we click on home, the application takes us to **http://natas7.natas.labs.overthewire.org/index.php?page=home** and similarly we are taken to **http://natas7.natas.labs.overthewire.org/index.php?page=about** for the about page.
+
+This application behavior gives us an idea that if we change the input for the get variable, we might be able to open a different page that the application owner probably did not intend for us to be able to. After changing the page variable to the destination provided in the hint ‘**/etc/natas_webpass/natas8**‘, we can see the content of that page which is the password for the next level.
+
+![natas7-2](https://securitytimes.files.wordpress.com/2017/06/7-10-2017-3-57-32-pm.png?w=663)
+
+<pre><h3><b>Level 8
+Username : natas8
+Password : DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe
+URL      : http://natas8.natas.labs.overthewire.org</b></h3></pre>
