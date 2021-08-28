@@ -1,0 +1,74 @@
+# Natas Level 11 → Level 12
+<pre><h3><b>Level 11
+Username : natas11
+Password : U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK
+URL      : http://natas11.natas.labs.overthewire.org</b></h3></pre>
+### Solution
+
+To solve this level, we first log into the natas11 application using the credentials provided above.
+
+The application displays a message '**Cookies are protected with XOR encryption**' and allows us to change the background color of the application using an input form **(Default : #ffffff)**.
+Upon checking the source code of the application, we can see that the application uses XOR function to encrypt some data using a key which is not known to us and a cookie is set which contains the user’s preference for background color along with a **showpassword** key.
+Everytime a user makes a request, the application loads the cookie and decodes it to find out the current value of **showpassword**  and **bgcolor**.
+The cookie is set using the following line:
+
+<code>setcookie("data", base64_encode(xor_encrypt(json_encode($d))));
+  //$d is the array which contains the data.</code>
+
+The XOR function:
+
+<code>function xor_encrypt($in) {
+ $key = '';
+ $text = $in;
+ $outText = '';
+// Iterate through each character
+ for($i=0;$i<strlen($text);$i++) {
+ $outText .= $text[$i] ^ $key[$i % strlen($key)];
+ }
+return $outText;
+}</code>
+
+Therefore, a cookie is a base64 encoding of the XOR encrypted value of json encoded value of the data. The default cookie set by the application is "**data=ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw=**".
+The XOR function has the following property:
+
+`If, A⊕B=C
+then, A⊕B⊕B=C⊕B
+therefore, A=C⊕B`
+  
+Therefore, if we XOR the the two values that are known to us, json encoded value of default data and base64 decoded value of cookie, the answer should be the key used for the XOR operation.
+
+The output of the above php page is '**qw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jq**'. Based on the output, it seems like the key value originally used by the application is '**qw8J**'.
+Now that we are aware of the key, we can create our own data with showpassword  set to yes. We can then create our own cookie which would be used by the application to determine whether the password should be shown or not.
+
+`<?php
+$newdata = array( "showpassword"=>"yes", "bgcolor"=>"#ffffff");
+function xor_encrypt($in) 
+{
+    $text = $in;
+    $key = 'qw8J';
+    $outText = '';
+    // Iterate through each character
+    for($i=0;$i<strlen($text);$i++)
+    {
+        $outText .= $text[$i] ^ $key[$i % strlen($key)];
+    }
+   return $outText;
+}
+function newCookie()
+{
+    global $newdata;
+    print base64_encode(xor_encrypt(json_encode($newdata)));
+}
+newCookie();
+?>`
+
+The new cookie value is '**ClVLIh4ASCsCBE8lAxMacFMOXTlTWxooFhRXJh4FGnBTVF4sFxFeLFMK**'. Upon submitting a new request with the data cookie set results in the application printing the password for the next level.
+We can see that the application is very similar to Natas level 6, however, they are not the same. Upon inspecting the source code for the page, we can see that the application uses a special encodesecret function to encode the secret key passed by the application and compares that with the already stored encoded secret value. 
+  
+Therefore, if we can reverse the encoding (decode) on the encoded string and provide the decoded string to the application, the application should respond with our secret value.
+
+![natas11-1](https://securitytimes.files.wordpress.com/2017/06/6-26-2017-2-55-53-pm.png?w=663)
+<pre><h3><b>Level 12
+Username : natas12
+Password : EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3
+URL      : http://natas12.natas.labs.overthewire.org</b></h3></pre>
