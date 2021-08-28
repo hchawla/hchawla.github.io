@@ -1,0 +1,27 @@
+# Natas Level 5 → Level 6
+<pre><h3><b>Level 5
+Username : natas5
+Password : iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
+URL      : http://natas5.natas.labs.overthewire.org</b></h3></pre>
+### Solution
+
+To solve this level, we first log into the natas5 application using the credentials provided above.
+
+![natas5-1](https://securitytimes.files.wordpress.com/2017/06/7-10-2017-3-26-28-pm.png?w=663)
+
+We can see that the application displays a message ‘**Access disallowed. You are not logged in**‘.
+
+On investigation, we can see in the Burp Proxy that the application sets a cookie named **loggedin** with **0** as the value.
+
+![natas5-2](https://securitytimes.files.wordpress.com/2017/06/7-10-2017-3-27-08-pm.png?w=663)
+
+It seems like this cookie is read by the server to determine whether a user is allowed access or not. Therefore, the next step should be changing the value of this cookie and seeing if the server responds differently.
+
+![natas5-3](https://securitytimes.files.wordpress.com/2017/06/7-10-2017-3-28-02-pm.png?w=663)
+
+As we can see now, the application responds differently and displays the password for natas6.
+
+<pre><h3><b>Level 6
+Username : natas6
+Password : aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1
+URL      : http://natas6.natas.labs.overthewire.org</b></h3></pre>
