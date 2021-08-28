@@ -1,0 +1,21 @@
+# Natas Level 10 → Level 11
+<pre><h3><b>Level 10
+Username : natas10
+Password : nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu
+URL      : http://natas10.natas.labs.overthewire.org</b></h3></pre>
+### Solution
+
+To solve this level, we first log into the natas10 application using the credentials provided above.
+
+After logging in, we can see that the application looks like a search application very similar to the one in the previous level.
+
+The application functionality is the exact same as the previous time. However, it now strips of ; and & characters.
+
+Since the application uses grep to search for the key, we can search in multiple files by appending the password file with the search terms. In grep, we can search in multiple files by using the command `grep -i search_term file1 file2`. Therefore, we can use the following search term : `u /etc/natas_webpass/natas11`. This results in the following query to the application server: `passthru(“grep -i u /etc/natas_webpass/natas11 dictionary.txt”);` which means that the application is now searching for the character ‘u‘ in multiple file locations.
+
+Note: There is a possibility that the character that is chosen is not found in the password file in which case, keep trying with different characters. I am sure there are different ways of solving this level and this is one of them.
+
+<pre><h3><b>Level 11
+Username : natas11
+Password : U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK
+URL      : http://natas11.natas.labs.overthewire.org</b></h3></pre>
