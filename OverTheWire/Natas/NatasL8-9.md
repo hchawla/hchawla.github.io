@@ -1,0 +1,22 @@
+# Natas Level 8 → Level 9
+<pre><h3><b>Level 8
+Username : natas8
+Password : DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe
+URL      : http://natas8.natas.labs.overthewire.org</b></h3></pre>
+### Solution
+
+To solve this level, we first log into the natas8 application using the credentials provided above.
+
+![natas8-1](https://securitytimes.files.wordpress.com/2017/06/7-10-2017-3-59-58-pm.png?w=663)
+
+We can see that the application is very similar to Natas level 6, however, they are not the same. Upon inspecting the source code for the page, we can see that the application uses a special encodesecret function to encode the secret key passed by the application and compares that with the already stored encoded secret value. Therefore, if we can reverse the encoding (decode) on the encoded string and provide the decoded string to the application, the application should respond with our secret value.
+
+`php > $encodedSecret = "3d3d516343746d4d6d6c315669563362";
+php > echo base64_decode(strrev(hex2bin($encodedSecret)));`
+
+The above function responds with ‘**oubWYf2kBq**‘ as the secret. Therefore, if we input this as the secret in the application, the application should hopefully respond back with the password for the next round. As we can see above, we now have the credentials for the next level.
+
+<pre><h3><b>Level 9
+Username : natas9
+Password : W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl
+URL      : http://natas9.natas.labs.overthewire.org</b></h3></pre>
