@@ -1,8 +1,8 @@
 # Natas Level 7 → Level 8
 <pre><h3><b>Level 7
-Username : natas5
-Password : iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
-URL      : http://natas5.natas.labs.overthewire.org</b></h3></pre>
+Username : natas7
+Password : 7z3hEENjQtflzgnT29q7wAvMNfZdh0i9
+URL      : http://natas7.natas.labs.overthewire.org</b></h3></pre>
 ### Solution
 
 To solve this level, we first log into the natas7 application using the credentials provided above.
