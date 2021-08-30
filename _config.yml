@@ -2,15 +2,5 @@ theme: minima
 title: Security Times
 description: The purpose of this blog is to learn and create solutions for various CTF’s, wargames, etc. Most of the solutions are from wargames at OverTheWire.
 show_excerpts: true # set to false to remove excerpts on the homepage
-
-# social links
-github_username:  hchawla # DO NOT include the @ character, or else the build will fail!
-
-# Enter the following platform usernames if you would like for them to appear on your site.
-owner:
-  name: Harsh Chawla
-  email: chawla.harshit@gmail.com
-  # Do not include the @ symbol in your Twitter username
-  twitter: hchawla
-  linkedin: #chawlaharshit
-  github: hchawla
+  
+github_username:  chawlaharshit # DO NOT include the @ character, or else the build will fail!
