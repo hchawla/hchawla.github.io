@@ -1,3 +1,8 @@
+---
+layout: post
+title:  "Natas Level 0 → Level 1"
+---
+
 # Natas Level 0 → Level 1
 <pre><h3><b>Level 0
 Username : natas0
