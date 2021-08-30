@@ -1,7 +1,7 @@
 theme: jekyll-theme-hacker
 title: Security Times
 description: The purpose of this blog is to learn and create solutions for various CTF’s, wargames, etc. Most of the solutions are from wargames at OverTheWire.
-
+show_excerpts: true # set to false to remove excerpts on the homepage
 # Enter the following platform usernames if you would like for them to appear on your site.
 owner:
   name: Harsh Chawla
