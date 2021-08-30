@@ -5,3 +5,11 @@ title: anin
 <h1>It works!</h1>
 <p><i>site.url</i> = {{ site.url }}</p>
 <p><i>site.baseurl</i> = {{ site.baseurl }}</p>
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
