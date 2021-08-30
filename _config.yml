@@ -1,3 +1,10 @@
 theme: jekyll-theme-hacker
 title: Security Times
-description: The purpose of this blog is to learn and create solutions for various CTF’s, wargames, etc. Most of the solutions are from wargames at Overthewire. I am constantly looking for new challenges to solve, so please feel free to drop recommendations.
+description: The purpose of this blog is to learn and create solutions for various CTF’s, wargames, etc. Most of the solutions are from wargames at OverTheWire.
+
+name: Harsh Chawla
+  email: chawla.harshit@gmail.com
+  # Do not include the @ symbol in your Twitter username
+  twitter: hchawla
+  linkedin: #chawlaharshit
+  github: hchawla
