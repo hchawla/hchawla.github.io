@@ -1,3 +1,12 @@
+---
+layout: post
+title: Natas Level 14 → Level 15
+excerpt: "Solving Natas Level 14"
+tags: [Overthewire, Natas]
+comments: true
+category: blog
+---
+
 # Natas Level 14 → Level 15
 <pre><h3><b>Level 14
 Username : natas14
