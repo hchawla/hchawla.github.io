@@ -1,11 +1,3 @@
-<nav>
-  {% for item in site.data.navigation %}
-    <a href="{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>
-      {{ item.name }}
-    </a>
-  {% endfor %}
-</nav>
-
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/hchawla/hchawla.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
