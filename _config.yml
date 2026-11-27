@@ -1,10 +1,16 @@
-plugins:
-- jekyll-redirect-from
-
 title: Harsh Chawla
 description: Security engineering leader. Resume and CTF write-ups.
 url: https://harsh.chawla.it
-permalink: /ctf/:categories/:title/
+
 markdown: kramdown
 highlighter: rouge
-exclude: [README.md, .gitignore]
+permalink: /ctf/:categories/:title/
+
+plugins:
+  - jekyll-redirect-from
+
+defaults:
+  - scope: { path: "_posts/overthewire/natas" }
+    values: { layout: post, categories: [overthewire, natas] }
+  - scope: { path: "_posts/overthewire/behemoth" }
+    values: { layout: post, categories: [overthewire, behemoth] }
