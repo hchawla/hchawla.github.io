@@ -5,8 +5,8 @@ plugins:
 
 title: Security Times
 description: The purpose of this blog is to learn and create solutions for various CTF’s, wargames, etc. Most of the solutions are from wargames at OverTheWire.
-url: https://chawla.it
-permalink: /:categories/:title/
+url: https://harsh.chawla.it
+permalink: /ctf/:categories/:title/
 show_excerpts: true # set to false to remove excerpts on the homepage
 show_downloads: false
 
