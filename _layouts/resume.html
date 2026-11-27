@@ -43,6 +43,16 @@ layout: default
 </section>
 {%- endfor %}
 
+{%- if r.projects %}
+<h2>Projects</h2>
+{%- for p in r.projects %}
+<div class="project">
+  <div class="row"><a class="project-name" href="{{ p.url }}">{{ p.name }}</a><span class="dates">{{ p.where }}</span></div>
+  <p>{{ p.description }}</p>
+</div>
+{%- endfor %}
+{%- endif %}
+
 <h2>Education and certifications</h2>
 {%- for e in r.education %}
 <div class="row"><span><strong>{{ e.school }}</strong>, {{ e.detail }}</span><span class="dates">{{ e.year }}</span></div>

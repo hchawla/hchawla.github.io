@@ -68,6 +68,11 @@ experience:
     dates: 2013 – 2014
     roles:
       - title: Software Developer
+projects:
+  - name: homebase
+    url: https://clawhub.ai/hchawla/homebase
+    where: ClawHub
+    description: An open-source agent skill that keeps a family's calendar, briefings, meals, school email and errands in one place.
 education:
   - school: Georgia Institute of Technology
     detail: MS, Information Security | GPA 3.8
