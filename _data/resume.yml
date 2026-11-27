@@ -1,0 +1,79 @@
+name: Harsh Chawla
+headline: Security Engineering Manager | Cloud, Identity and AI Security
+location: Irvine, CA
+photo: /assets/images/harsh-chawla.jpg
+links:
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/chawlaharshit
+  - label: GitHub
+    url: https://github.com/hchawla
+  - label: CTF write-ups
+    url: /ctf/
+summary: >-
+  Security engineering leader with 12+ years in application security, identity and
+  access management, threat modeling and compliance. At Google, I lead a distributed
+  security and privacy team as a hands-on tech lead manager, partner with BigQuery,
+  Google Public Sector and Cloud security teams, and build AI-agent tooling that
+  scales security reviews.
+skills:
+  - area: Leadership
+    items: People management, technical leadership, distributed teams, cross-org security programs
+  - area: Security
+    items: Application security, threat modeling, design reviews, IAM, vulnerability research, reverse engineering
+  - area: AI and cloud
+    items: AI security, AI-agent tooling, Google Cloud, BigQuery and data pipeline security
+  - area: Compliance
+    items: CMMC, NIST, ISO 27001, CIS, OWASP Top 10, security audits
+experience:
+  - company: Google
+    location: Irvine, CA
+    dates: 2022 – Present
+    roles:
+      - title: Security Engineering Manager
+        dates: 2026 – Present
+        bullets:
+          - Lead a security and privacy team of 4 across India and Kirkland, WA, setting technical direction while staying hands-on in design reviews and tooling.
+          - Own security for BigQuery data pipelines, including access management for human and machine identities.
+          - Build AI-agent tooling that scales security reviews and threat modeling.
+          - Delivered a CMMC Level 1 assessment with Google Public Sector.
+          - Drive horizontal Google Cloud security programs with product, enterprise and cloud security teams.
+      - title: Senior Security Engineer
+        dates: 2023 – 2026
+        bullets:
+          - Led security design reviews, threat models and AI security assessments for Google Cloud data products.
+          - Designed access controls and identity patterns for BigQuery data pipelines with product engineering teams.
+      - title: Security Engineer
+        dates: 2022 – 2023
+        bullets:
+          - Ran application security reviews and threat models for Google Cloud features before launch.
+          - Reviewed access and identity configurations for data pipeline services.
+  - company: F5 Networks
+    location: San Jose, CA
+    dates: 2018 – 2022
+    roles:
+      - title: Senior Security Researcher
+        bullets:
+          - Found F5 product vulnerabilities through reverse engineering and code review; published research on F5 Labs.
+          - Analyzed vendor patches, ran honeypots to track attackers, and wrote signatures for emerging threats.
+  - company: PricewaterhouseCoopers (PwC)
+    location: Atlanta, GA
+    dates: 2016 – 2018
+    roles:
+      - title: Experienced Cybersecurity Associate
+        bullets:
+          - Assessed Fortune 100 security programs against NIST, ISO 27001, CIS and OWASP Top 10, and built remediation plans.
+          - "Audited enterprise IAM: role-based access, SSO, MFA, federation, identity lifecycle and privileged accounts."
+  - company: Red Hat
+    location: Maharashtra, India
+    dates: 2013 – 2014
+    roles:
+      - title: Software Developer
+education:
+  - school: Georgia Institute of Technology
+    detail: MS, Information Security | GPA 3.8
+    year: "2015"
+  - school: Jaypee Institute of Information Technology
+    detail: BS, Computer Science
+    year: "2013"
+certifications:
+  - CISSP | Certified Information Systems Security Professional

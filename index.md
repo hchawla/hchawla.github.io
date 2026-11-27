@@ -1,3 +1,4 @@
 ---
-layout: home
+layout: resume
+title: Harsh Chawla
 ---
