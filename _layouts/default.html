@@ -1,39 +1,38 @@
-
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    {% include head-custom.html %}
-
-{% seo %}
-  </head>
-
-  <body>
-
-    <header>
-      <div class="container">
-        <a id="a-title" href="{{ '/' | relative_url }}">
-          <h1>{{ site.title | default: site.github.repository_name }}</h1>
-        </a>
-        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
-
-        <section id="downloads">
-          {% if site.show_downloads %}
-            <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
-            <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
-          {% endif %}
-          <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
-        {{ content }}
-      </section>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- assign r = site.data.resume -%}
+  {%- if page.url == "/" -%}
+    {%- capture page_title -%}{{ r.name }} | {{ r.headline | split: " |" | first }}{%- endcapture -%}
+    {%- assign page_desc = r.summary | strip | truncate: 155 -%}
+  {%- else -%}
+    {%- capture page_title -%}{{ page.title }} | {{ r.name }}{%- endcapture -%}
+    {%- assign page_desc = page.excerpt | default: page.description | strip_html | strip_newlines | strip | truncate: 155 -%}
+  {%- endif %}
+  <title>{{ page_title }}</title>
+  {%- if page_desc and page_desc != "" %}
+  <meta name="description" content="{{ page_desc | escape }}">
+  {%- endif %}
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body>
+  <div class="topnav">
+    <div class="inner">
+      <a class="brand" href="{{ '/' | relative_url }}">{{ site.data.resume.name }}</a>
+      <nav>
+        <a href="{{ '/' | relative_url }}"{% if page.url == "/" %} class="active"{% endif %}>Resume</a>
+        <a href="{{ '/ctf/' | relative_url }}"{% if page.url contains "/ctf/" %} class="active"{% endif %}>CTF write-ups</a>
+      </nav>
     </div>
-  </body>
+  </div>
+  <main class="wrap">
+    {{ content }}
+  </main>
+</body>
 </html>

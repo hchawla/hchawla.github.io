@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<article>
+  <div class="post-head">
+    <div class="meta-line"><a href="{{ '/ctf/' | relative_url }}">CTF write-ups</a> · OverTheWire {{ page.categories[1] | capitalize }}</div>
+    <h1>{{ page.title }}</h1>
+    <div class="meta-line">{{ page.date | date: "%B %-d, %Y" }}</div>
+  </div>
+  <div class="post-body">
+    {{ content }}
+  </div>
+  {%- assign game = page.categories[1] %}
+  {%- assign siblings = site.categories[game] | sort: "date" %}
+  {%- assign prev_post = nil %}{% assign next_post = nil %}
+  {%- for p in siblings %}
+    {%- if p.url == page.url %}
+      {%- assign i_prev = forloop.index0 | minus: 1 %}
+      {%- assign i_next = forloop.index0 | plus: 1 %}
+      {%- if forloop.first == false %}{% assign prev_post = siblings[i_prev] %}{% endif %}
+      {%- if forloop.last == false %}{% assign next_post = siblings[i_next] %}{% endif %}
+    {%- endif %}
+  {%- endfor %}
+  <nav class="post-nav">
+    <span>{% if prev_post %}<a href="{{ prev_post.url | relative_url }}">← {{ prev_post.title }}</a>{% endif %}</span>
+    <span>{% if next_post %}<a href="{{ next_post.url | relative_url }}">{{ next_post.title }} →</a>{% endif %}</span>
+  </nav>
+</article>
