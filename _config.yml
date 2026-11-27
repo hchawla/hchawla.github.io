@@ -1,13 +1,10 @@
-remote_theme: pages-themes/hacker@v0.2.0
 plugins:
-- jekyll-remote-theme
 - jekyll-redirect-from
 
-title: Security Times
-description: The purpose of this blog is to learn and create solutions for various CTF’s, wargames, etc. Most of the solutions are from wargames at OverTheWire.
+title: Harsh Chawla
+description: Security engineering leader. Resume and CTF write-ups.
 url: https://harsh.chawla.it
 permalink: /ctf/:categories/:title/
-show_excerpts: true # set to false to remove excerpts on the homepage
-show_downloads: false
-
-github_username:  chawlaharshit # DO NOT include the @ character, or else the build will fail!
+markdown: kramdown
+highlighter: rouge
+exclude: [README.md, .gitignore]
