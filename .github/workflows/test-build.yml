@@ -36,6 +36,6 @@ jobs:
           for f in $(cd out_branch && find . -name '*.html'); do
             diff -q out_main/$f out_branch/$f >/dev/null || { echo "--- $f"; diff out_main/$f out_branch/$f | head -12; }
           done
-          echo "== h2 on ctf"; grep -o "<h2>[^<]*</h2>" out_branch/ctf/index.html
+          echo "== CNAME"; cat out_branch/CNAME; echo "== h2 on ctf"; grep -o "<h2>[^<]*</h2>" out_branch/ctf/index.html
           echo "== meta-line sample"; grep -o 'meta-line">[^<]*<' out_branch/ctf/overthewire/behemoth/level-0-1/index.html
           exit $fail

@@ -5,6 +5,7 @@ url: https://harsh.chawla.it
 markdown: kramdown
 highlighter: rouge
 permalink: /ctf/:categories/:title/
+include: [CNAME]
 
 plugins:
   - jekyll-redirect-from
